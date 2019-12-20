@@ -2,12 +2,9 @@ const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
 const inquirer = require("inquirer");
-const express = require('express');
 const mysql = require("mysql");
-const app = express();
-const ctable = require('console.table')
+const cTable = require('console.table')
 
-app.set('port', process.env.PORT || 3308);
 
 //connect to mysql
 const con = mysql.createConnection({
@@ -41,7 +38,8 @@ function userQuery() {
                 choices: [
                     'View All Departments',
                     'View All Roles',
-                    'View All Employees'
+                    'View All Employees',
+                    'Add Department'
                 ],
             },
         ])
@@ -55,6 +53,9 @@ function userQuery() {
             }
             else if (answers.main_menu === 'View All Employees') {
                 viewEmployees();
+            }
+            else if (answers.main_menu === 'Add Department') {
+                addDepartment();
             }
         });
     };
@@ -80,5 +81,29 @@ function viewRoles() {
     });
 };
 
+function addDepartment() {
+    inquirer
+    .prompt(
+        {
+            type: 'input',
+            name: 'addDept',
+            message: 'Enter Department Name:'
+            
+        } 
+    ).then (function(answers){
+
+        con.query("INSERT INTO `department` (name) VALUES ('"+ answers.addDept +"')", function (answers, err){
+            console.log(answers);
+            // if (err) throw err;
+            
+    })
+
+})
+    // let sql = `INSERT INTO department(name) VALUES (answers: addDept)`;
+    // con.query(sql, function (err, result) {
+    //     if (err) throw err;
+    //     console.log("record inserted");
+    // });
+}
 
 
