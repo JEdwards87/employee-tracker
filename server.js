@@ -18,7 +18,6 @@ const con = mysql.createConnection({
 function userQuery() {
     con.connect((err) => {
         if (err) throw err;
-        console.log('Connected!');
     });
 
     //Title Zone
