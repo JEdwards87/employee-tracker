@@ -38,7 +38,8 @@ function userQuery() {
                     'View All Departments',
                     'View All Roles',
                     'View All Employees',
-                    'Add Department'
+                    'Add Department',
+                    'Add Role'
                 ],
             },
         ])
@@ -55,6 +56,9 @@ function userQuery() {
             }
             else if (answers.main_menu === 'Add Department') {
                 addDepartment();
+            }
+            else if (answers.main_menu === 'Add Role') {
+                addRole();
             }
         });
     };
@@ -98,11 +102,37 @@ function addDepartment() {
     })
 
 })
-    // let sql = `INSERT INTO department(name) VALUES (answers: addDept)`;
-    // con.query(sql, function (err, result) {
-    //     if (err) throw err;
-    //     console.log("record inserted");
-    // });
+
+}
+
+function addRole() {
+    inquirer
+    .prompt(
+        {
+            type: 'input',
+            name: 'addTitle',
+            message: 'Enter Title:'
+        , 
+        
+            type: 'input',
+            name: 'addSalary',
+            message: 'Enter Salary:'
+        ,
+        
+            type: 'input',
+            name: 'addDepartment_Id',
+            message: 'Enter Salary:'
+        }  
+    ).then (function(answers){
+
+        con.query("INSERT INTO `role` (title, salary, department_id) VALUES ('"+ answers.addTitle +"', '"+ answers.addSalary +"', '"+ answers.addDepartment_Id +"')", function (answers, err){  //AyDy helped me with th '"+something+"'
+            console.log(answers);
+            // if (err) throw err;
+            
+    })
+
+})
+
 }
 
 
