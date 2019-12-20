@@ -1,10 +1,11 @@
 {
   "name": "employee-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Developers are often tasked with creating interfaces that make it easy for non-developers to view and interact with information stored in databases. Often these interfaces are known as **C**ontent **M**anagement **S**ystems. In this homework assignment, your challenge is to architect and build a solution for managing a company's employees using node, inquirer, and MySQL.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Jesse Edwards",
   "license": "MIT",
@@ -16,5 +17,13 @@
     "figlet": "^1.2.4",
     "inquirer": "^7.0.1",
     "mysql": "^2.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JEdwards87/employee-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JEdwards87/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/JEdwards87/employee-tracker#readme"
 }
