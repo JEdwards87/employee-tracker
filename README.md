@@ -1,8 +1,6 @@
 Live Link: https://jedwards87.github.io/employee-tracker/
 
-![epmtrck](https://user-images.githubusercontent.com/57024833/71232832-36171d00-22b9-11ea-96cc-d41091715b06.PNG)
-
-![pdfgen](https://user-images.githubusercontent.com/57024833/71233028-e422c700-22b9-11ea-9e3d-634719e09bb0.gif)
+![pdfgen](https://user-images.githubusercontent.com/57024833/72873416-63d6f380-3cb5-11ea-8741-57d64a887e93.gif)
 
 
 User Story: As a business owner I want to be able to view and manage the departments, roles, and employees in my company so that I can organize and plan my business.
